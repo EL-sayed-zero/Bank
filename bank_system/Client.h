@@ -41,7 +41,6 @@ public:
      
     }
 
-    //getters 
     double getBalance() {
         return balance;
     }
