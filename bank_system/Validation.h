@@ -7,7 +7,7 @@ class Validation
 public:
 
 	static bool isValidName(string name) {
-		 // enter first  if no  flase
+		
 		if (name.size() < 5|| name.size() > 20) { 
 			return false;
 
