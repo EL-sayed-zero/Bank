@@ -7,12 +7,11 @@ class Validation
 public:
 
 	static bool isValidName(string name) {
-		
-		if (name.size() < 5|| name.size() > 20) { 
+		 
+		if (name.size() < 5 || name.size() > 20) {
 			return false;
 
 		}
-		//for eachloop
 		for (char c:name) {
 			   
 			if (!isalpha(c) || c == ' ') {
