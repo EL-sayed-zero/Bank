@@ -13,15 +13,6 @@ int main() {
 
 
 	Client c1(1400, 30, "sayed", "sayedsyaed");
-	
-	 
-
-
-
-	
-
-
-
-
+	//jjjhuhj
 }
 
