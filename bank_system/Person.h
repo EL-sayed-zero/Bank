@@ -82,7 +82,7 @@ public:
 		
 	}
 
-	//getter 
+
 
 	int getId() {
 		return id;
