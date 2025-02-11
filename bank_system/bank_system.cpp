@@ -5,11 +5,11 @@ using namespace std;
 #include "Client.h"
 #include "Employee.h"
 
-//add comment
+
 int main() {
 
 
-	Client c1(1400, 30, "sayed", "sayedsyaed");
+	Client c1(1800, 30, "sayed", "sayed1234");
 
 }
 
