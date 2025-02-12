@@ -4,6 +4,7 @@
 class FileManger :
     public DataSourceInterface
 {
+public:
     bool fileexist(string filename) {
         ifstream file(filename);
         return file.good();
@@ -21,6 +22,16 @@ class FileManger :
         employeefile.close();
 
     }
+
+    void remove_all_employee() {
+        if (!fileexist("employee.txt")) {
+            return;
+        }
+
+        ofstream file("Employee.txt", ios::trunc);
+
+    }
+
 
 };
 
