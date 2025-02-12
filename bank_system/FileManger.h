@@ -6,7 +6,7 @@ class FileManger :
 {
     void add_Employee(Employee person) {
         ofstream employeefile("Employee.txt");
-        employeefile << person.getId() << " " << person.getName() << person.getPassword();
+        employeefile << person.getId() << " " << person.getName() << " " << person.getPassword() << endl;
         employeefile.close();
     }
 };
