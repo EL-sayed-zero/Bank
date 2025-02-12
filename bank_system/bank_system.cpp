@@ -4,12 +4,14 @@ using namespace std;
 #include "Person.h"
 #include "Client.h"
 #include "Employee.h"
+#include"FileManger.h"
 
 
 int main() {
 
-    
-	Client c1(2000, 30, "sayed", "sayed1234");
+    Client c;
+    cin>>c;
+    FileManger::add_Client(c);
 
 }
 

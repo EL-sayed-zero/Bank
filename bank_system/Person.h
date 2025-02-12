@@ -15,13 +15,20 @@ protected:
 
 public:
 
+	Person() {
+		id = 0;
+		name = "unKnowen";
+		password = "unknown";
+
+	}
 
 	Person(int id, string name, string password) {
 
 	
 		
 		 while (!Validation::isValId(id)){
-			cout << "invalid id /n";
+			cout << "invalid id \n";
+			cout << "enter the valid id \n";
 			cin >> id;
 		}
 		this->id = id;
@@ -29,7 +36,7 @@ public:
 
 		while (!Validation::isValidName(name)) {
 
-			cout << "invalid name , must has min 5 to 20  ) " << endl;
+			cout << "invalid name , must has min 5 to 20 char   " << endl;
 			cout << "###############################\n";
 			cout << "enter the valid Name \n";
 			cin >> name;
@@ -40,6 +47,7 @@ public:
 		while (!Validation::isValidPassword(password)) {
 
 			cout << "invalid password try again " << endl;
+			cout << " enter valid password  " << endl;
 			cin >> password;
 
 		}
@@ -61,7 +69,8 @@ public:
 
 		while (!Validation::isValidName(name)) {
 
-			cout << "invalid name , ( must has min 5 to 20 char ) " << endl;
+			cout << "invalid name , must has min 5 to 20 char  " << endl;
+			cout << "enter the valid Name \n";
 			cin >> name;
 		}
 		this->name = name;
@@ -74,6 +83,7 @@ public:
 		while (!Validation::isValidPassword(password)) {
 
 			cout << "invalid password try again " << endl;
+			cout << " enter valid password  " << endl;
 			cin >> password;
 
 		}
