@@ -9,7 +9,7 @@ class FileManger :
 public:
 
     bool static fileexist(string filename) {  // you dont need this  fucntion                                                               
-        ifstream file(filename);               // you can only use the  (.good )  for cheak if the file is found or not  
+        ifstream file(filename);               // you can only use the  (.good() )  for cheack if the file is found or not  
         return file.good();                     // look at to the end of page and see my method ;;;;            
     }
     void static add_Employee(Employee person) {
