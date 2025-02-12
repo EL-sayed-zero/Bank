@@ -4,6 +4,7 @@ using namespace std;
 #include<string>
 #include "Person.h"
 #include"Validation.h"
+#include<utility>
 
 class Client :
     public Person
@@ -13,10 +14,15 @@ private:
 
 public:
 
-    Client(double balance, int id, string name, string password) :Person(id, name, password) {
+    Client() {
+        balance = 0;
+    }
+
+    Client(double balance , int id, string name, string password) :Person(id, name, password) {
 
        while (!Validation::isMinBalance(balance)) {
             cout << "min balance  must have greater than or equal 1500"<<endl;
+            cout << "enter the balance again \n";
             cin >> balance;
             
         }
@@ -96,6 +102,28 @@ public:
         Person::display();
         cout << "balane:" << balance<<endl;
         cout << "######################### \n";
+
+
+    }
+
+    //overloading cin>> methods
+
+    friend istream& operator >>(istream& in, Client &client) {
+        int temp_id;
+        double temp_balnce;
+        string temp_pw, temp_name;
+
+        cout << "enter id "<<endl;
+        in >> temp_id;
+        cout << "enter name " << endl;
+        in >> temp_name;
+        cout << "enter balance " << endl; 
+        in >> temp_balnce;
+        cout << "enter password " << endl;
+        in >> temp_pw;
+
+        client = move(Client(temp_balnce, temp_id, temp_name, temp_pw));
+        return in;
     }
 
 };
