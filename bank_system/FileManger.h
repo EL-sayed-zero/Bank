@@ -4,10 +4,23 @@
 class FileManger :
     public DataSourceInterface
 {
+    bool fileexist(string filename) {
+        ifstream file(filename);
+        return file.good();
+    }
+
     void add_Employee(Employee person) {
-        ofstream employeefile("Employee.txt");
+        if (!fileexist("Employee.txt")) {
+            ofstream employeefile("Employee.txt");
+            employeefile << person.getId() << " " << person.getName() << " " << person.getPassword() << endl;
+            employeefile.close();
+            return;
+        }
+        ofstream employeefile("Employee.txt", ios::app);
         employeefile << person.getId() << " " << person.getName() << " " << person.getPassword() << endl;
         employeefile.close();
+
     }
+
 };
 
