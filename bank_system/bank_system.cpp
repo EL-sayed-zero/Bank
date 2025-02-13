@@ -9,9 +9,10 @@ using namespace std;
 
 int main() {
 
-    Client c;
+   /* Client c;
     cin>>c;
-    FileManger::add_Client(c);
+    FileManger::add_Client(c);*/
+    FileManger::remove_all_Clients();
 
 }
 

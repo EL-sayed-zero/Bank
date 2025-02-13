@@ -40,7 +40,7 @@ public:
 
     void static add_Client(Client person) {
 
-        fstream file("client.txt", ios::app);
+        ofstream file("client.txt", ios::app);
         if (!file.good()) {
             cout << "There was an error with the file." << endl;
             exit(1);
@@ -52,5 +52,18 @@ public:
         file.close();
 
    }
+
+
+    void static remove_all_Clients() {
+         ofstream file("client.txt",  ios::trunc);
+         if (!file) {
+             cout<<"There was an error with the file.";
+             exit(2);
+         }
+
+         file.close();
+       
+        
+    }
 };
 
