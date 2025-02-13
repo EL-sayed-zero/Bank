@@ -52,7 +52,8 @@ public:
 
 
 	static bool isValId(int id) {
-		return (id > 0);
+		
+		return (id > 0 );
 	}
 
 

@@ -112,18 +112,34 @@ public:
         int temp_id;
         double temp_balnce;
         string temp_pw, temp_name;
-
-        cout << "enter id "<<endl;
-        in >> temp_id;
-        cout << "enter name " << endl;
-        in >> temp_name;
         cout << "enter balance " << endl; 
         in >> temp_balnce;
+        client.setBalance(temp_balnce);
+        cout << "enter id "<<endl;
+        in >> temp_id;
+        client.setID(temp_id);
+        cout << "enter name " << endl;
+        in >> temp_name;
+        client.setName(temp_name);
         cout << "enter password " << endl;
         in >> temp_pw;
+        client.setPW(temp_pw);
 
-        client = move(Client(temp_balnce, temp_id, temp_name, temp_pw));
+
+        
         return in;
+    }
+
+    //overloading cout<< methods
+
+    friend ostream& operator <<(ostream& out, Client& client) {
+
+        cout << "id : " << client.getId()<<endl;
+        cout << "name :" << client.getName() << endl;
+        cout << "balance : " << client.getBalance() << endl;
+        cout << "password : " << client.getPassword()<<endl;
+
+        return out;
     }
 
 };

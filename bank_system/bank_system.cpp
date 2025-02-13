@@ -9,10 +9,21 @@ using namespace std;
 
 int main() {
 
-   /* Client c;
+  Client c;
     cin>>c;
-    FileManger::add_Client(c);*/
-    FileManger::remove_all_Clients();
+    FileManger::add_Client(c);
+ //FileManger::remove_all_Clients();
+
+
+
+    vector <Client>clients = FileManger::get_all_clients();
+
+    for (Client x : clients) {
+        cout << x << endl;
+    }
+   
+
+  
 
 }
 

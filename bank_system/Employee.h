@@ -60,18 +60,29 @@ public:
 
        cout << "enter id " << endl;
        in >> temp_id;
+       employee.setID(temp_id);
        cout << "enter name " << endl;
        in >> temp_name;
+       employee.setName(temp_name);
        cout << "enter salary " << endl;
        in >> temp_salary;
+       employee.setSalary(temp_salary);
        cout << "enter password " << endl;
        in >> temp_pw;
+       employee.setPW(temp_pw);
 
-       Employee  move(Employee(temp_salary, temp_id, temp_name, temp_pw));
+       
        return in;
    }
 
+   friend ostream& operator <<(ostream& out, Employee& employee) {
 
+       cout << "id : " << employee.getId() << endl;
+       cout << "name :" << employee.getName() << endl;
+       cout << "Salary : " << employee.getSalary() << endl;
+       cout << "password : " << employee.getPassword() << endl;
 
+       return out;
+   }
 };
 
