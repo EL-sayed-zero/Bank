@@ -13,15 +13,16 @@ public:
         return file.good();                     // look at to the end of page and see my method ;;;;            
     }
     void static add_Employee(Employee person) {
-        if (!fileexist("Employee.txt")) {
-            ofstream employeefile("Employee.txt");
-            employeefile << person.getId() << " " << person.getName() << " " << person.getPassword() << endl;
-            employeefile.close();
-            return;
+        fstream file("Employee.txt", ios::app);
+        if (!file.good()) {
+            cout << "There was an error with the file." << endl;
+            exit(1);
         }
-        ofstream employeefile("Employee.txt", ios::app);
-        employeefile << person.getId() << " " << person.getName() << " " << person.getPassword() << endl;
-        employeefile.close();
+        file << person.getName() << ",";
+        file << person.getId() << ",";
+        file << person.getSalary() << ",";
+        file << person.getPassword() << "\n";
+        file.close();
 
     }
 
@@ -52,5 +53,9 @@ public:
         file.close();
 
    }
+
+
+
+
 };
 
