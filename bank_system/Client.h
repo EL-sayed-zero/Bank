@@ -138,9 +138,11 @@ public:
         cout << "name :" << client.getName() << endl;
         cout << "balance : " << client.getBalance() << endl;
         cout << "password : " << client.getPassword()<<endl;
+        out << "#################################\n";
 
         return out;
     }
+
 
 };
 

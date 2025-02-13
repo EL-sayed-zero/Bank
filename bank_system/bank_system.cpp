@@ -4,6 +4,7 @@ using namespace std;
 #include "Person.h"
 #include "Client.h"
 #include "Employee.h"
+#include"Admin.h"
 #include"FileManger.h"
 
 
@@ -22,7 +23,13 @@ int main() {
         cout << x << endl;
     }
    
-
+    Admin a;
+    cin >> a;
+    FileManger::add_admin(a);
+    vector<Admin>admins = FileManger::get_all_admin();
+    for (Admin x : admins) {
+        cout << x;
+    }
   
 
 }

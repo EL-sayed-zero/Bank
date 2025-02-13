@@ -18,24 +18,31 @@ public:
     static void  add_Employee(Employee person) {
         if (!fileexist("Employee.txt")) {
             ofstream employeefile("Employee.txt");
-            employeefile << person.getId() << " " << person.getName() << " " << person.getPassword() << endl;
+            employeefile << person.getId() << "|" << person.getName() << "|" << person.getPassword() << "\n";
             employeefile.close();
             return;
         }
         ofstream employeefile("Employee.txt", ios::app);
-        employeefile << person.getId() << " " << person.getName() << " " << person.getPassword() << endl;
+        employeefile << person.getId() << "|" << person.getName() << "|" << person.getPassword() << "\n";
         employeefile.close();
 
     }
 
-   static void  remove_all_employee() {
+   static void  remove_all_employee() {  //edit this method ??? 
         if (!fileexist("Employee.txt")) {
             return;
         }
 
-        ofstream file("Employee.txt", ios::trunc);
+   }
 
-    }
+
+
+
+
+     
+       
+
+   
 
 
 
@@ -69,7 +76,7 @@ public:
          ofstream file("client.txt",  ios::trunc);
          if (!file) {
              cout<<"There was an error with the file.";
-             exit(2);
+             exit(1);
          }
 
          file.close();
@@ -117,8 +124,71 @@ public:
              
     }
   
+
+        //ADD admin files 
+
+
+   static void add_admin(Admin admin) {
+
+       ofstream file("admin.txt", ios::app);
+
+       if (!file) {
+           cout << "file not exist ";
+           exit(0);
+       }
+       file << admin.getName() << "|";
+       file << admin.getId() << "|";
+       file << admin.getSalary() << "|";
+       file << admin.getPassword() << "\n";
+       file.close();
+   }
   
 
+   static void delete_Admin() {
+
+       ofstream file("admin.txt", ios::trunc);
+       if (!file) {
+           cout<<"there was an erroe with file ";
+           return;
+
+       }
+       file.close();
+   }
+
+
+
+   static vector<Admin> get_all_admin() {
+
+       ifstream file("admin.txt", ios::in);
+       if (!file) {
+           cout << " can not find file";
+           exit(0);
+       }
+       vector<Admin>admins;
+       string line;
+       while (getline(file, line)) {
+
+           stringstream strs(line);
+           string id, salary, name, password;
+
+           getline(strs, name, '|');
+           getline(strs, id, '|');
+           getline(strs, salary, '|');
+           getline(strs, password, '\n');
+
+
+           int temp_id = stoi(id);
+           int temp_salary = stod(salary);
+
+           Admin admin(temp_salary, temp_id, name, password);
+           admins.push_back(admin);
+
+       }
+
+       file.close();
+       return admins;
+
+   }
 
 };
 

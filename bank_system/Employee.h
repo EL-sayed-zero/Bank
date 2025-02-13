@@ -14,6 +14,10 @@ protected:
     double salary;
 
 public:
+
+    Employee() {
+        salary = 0;
+    }
     Employee(double salary, int id, string name, string password) :Person(id, name, password) {
 
            while (!Validation::isValidSalary(salary)) {  
@@ -81,6 +85,7 @@ public:
        cout << "name :" << employee.getName() << endl;
        cout << "Salary : " << employee.getSalary() << endl;
        cout << "password : " << employee.getPassword() << endl;
+       out << "#################################\n";
 
        return out;
    }
