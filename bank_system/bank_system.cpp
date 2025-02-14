@@ -15,7 +15,7 @@ void displayFiles(vector<ty>&item) {
 
 }
 int main() {
-
+    //Employee e;
   Client c;
     cin>>c;
     FileManger::add_Client(c);
