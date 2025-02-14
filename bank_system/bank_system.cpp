@@ -19,7 +19,7 @@ int main() {
   Client c;
     cin>>c;
     FileManger::add_Client(c);
- //FileManger::remove_all_Clients();
+
 
 
 
